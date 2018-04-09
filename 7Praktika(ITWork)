@@ -5,11 +5,9 @@ class Auto{
 	protected:
 		int cost,time;
 		public:
-		void make_a(int a){ time=a;}
 			Auto(){
-			cout << "Âðåìÿ "<< time << endl;	
-			cost = time*14;
-			cout << "Öåíà "<< cost << endl;
+				time = 13;
+				cost = 15*14;
 			}
 	
 			};
@@ -17,22 +15,19 @@ class Bus{
 	protected:
 	int cost1,time1;
 	public:
-		void make_b(int b){ time1=b;}
 		Bus(){
-		cout << "Âðåìÿ "<< time1 << endl;
+			time1 =  13;
 			cost1 = 36;
-				cout << "Öåíà "<< cost1 << endl;
 		}
 };
 class Bike{
 	protected:
 	int cost2,time2;
 	public:
-		void make_c(int c){ time2=c;}
 		Bike(){
-			cout << "Âðåìÿ "<< time2 << endl;
+			time2 = 13;
 			cost2 = 0;
-			cout << "Öåíà "<< cost2 << endl;
+			
 		}
 };
 class Transport:public Auto,public Bus,public Bike{
@@ -40,17 +35,17 @@ class Transport:public Auto,public Bus,public Bike{
 		Transport(){
 			cout << "Ïðîöåññ ðàññ÷åòà"<<endl;
 		}
-	
-		
+		int showcost() {
+	cout << "Àâòîìîáèëü "<<endl<< "Öåíà "<< cost<<endl<< "Âðåìÿ "<<time<<endl
+	<<"Àâòîáóñ "<<endl<< "Öåí "<< cost1 <<endl << "Âðåìÿ "<<time2 << endl 
+	<< "Âåëîñèïåä"<< endl << "Öåíà "<< cost2 << endl<< "Âðåìÿ "<<time2<<endl;
+		}
 		~Transport(){
 		}
 };
 int main(){
 	setlocale(LC_ALL, "Russian");
 	Transport i;
-	i.make_a(12);
-	i.make_b(12);
-	i.make_c(134);
-
+	i.showcost();
 	return 0;
 }
